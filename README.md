@@ -1,6 +1,6 @@
 # Spotify API Testing
 
-Acest proiect demonstrează cum să testezi diferite metode API de la Spotify folosind Postman. Metodele testate includ:
+Acest proiect demonstrează cum să testezi diferite metode API de la Spotify folosind Postman. Metodele testate sunt:
 
 - **GET Album**
 - **GET Playlist**
@@ -17,7 +17,7 @@ Acest proiect demonstrează cum să testezi diferite metode API de la Spotify fo
 
 1. Clonează acest repository:
     ```bash
-    git clone https://github.com/numele-tau/spotify-api-testing.git
+    git clone https://github.com/MihaiMarianMacrea/Spotify-API-Testing.git
     cd spotify-api-testing
     ```
 
@@ -25,7 +25,7 @@ Acest proiect demonstrează cum să testezi diferite metode API de la Spotify fo
 
 3. Configurează variabilele de mediu pentru tokenul de acces Spotify.
 
-![Generate_code](images/Generate_Code.JPG)
+![Generate_code](images/Generate%20Code.JPG)
 ![Generate_Token](images/Generate_Token.JPG)
 
 ## Teste API
