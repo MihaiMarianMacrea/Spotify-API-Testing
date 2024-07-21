@@ -78,7 +78,7 @@ Această metodă modifică detaliile unui playlist specific.
 
 ![Teste PUT Change Playlist Details](images/Change%20Playlist%20Details%20Tests.JPG) 
 
-![Verifica daca modificarile s-au facut si Bug la parametrul 'public'](images/Change%20Playlist_Details%20+BUG.JPG) 
+![Verifica daca modificarile s-au facut si Bug la parametrul 'public'](images/Change%20Playlist%20Details%20+BUG.JPG) 
 
 ### POST Add Items to Playlist
 
@@ -92,7 +92,7 @@ Această metodă adaugă piese într-un playlist specific.
 - Verifică dacă răspunsul conține câmpul `snapshot_id`.
 - Verifică dacă `snapshot_id` nu este gol.
 
-![Teste POST Add Items to Playlist](images/Add%20items%20to%20Playlist%20Test.JPG)
+![Teste POST Add Items to Playlist](images/Add%20items%20To%20Playlist%20Test.JPG)
 
 ### DELETE Remove Playlist Items
 
