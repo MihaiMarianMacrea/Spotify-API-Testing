@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "8d557369-e1ec-42fd-a5a9-b3bb239bc113",
+		"name": "Spotify API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17553574"
+	},
+	"item": [
+		{
+			"name": "AUTHENTIFICATION",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MGRhZDhjMGFkOTEwNGFlNDlkNjgxZjE2MDYzZjYzMTY6YTYwMmVhOTI5NWEyNDY0ZWI1ZTZhODE3NGIxNjUwODY=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Token",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MGRhZDhjMGFkOTEwNGFlNDlkNjgxZjE2MDYzZjYzMTY6YTYwMmVhOTI5NWEyNDY0ZWI1ZTZhODE3NGIxNjUwODY=",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "client_id",
+							"value": "d59e0362b46b494e9c753c7824457df5",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "ba4ced38d26a46e0aa88d573ae34e0e2",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "AQCy_dCEixBglmbOJ6dXLs4Zh12uCAaCqHimWu-il_Nb93o7deiPLRro2-aGNqedkjZfO6Wa_ScN-iOcAGOVsn_yjkkfWA02zASZV2KxW5NmcFaEMWQDPVTCaQ-3qybx5bRtStYTW4wjbzWU3N9wFMB4gF0-78aTaIa2YGfiYxDu4N8S-tB9TnAENu2FuXFgjcE-lA6X5BU8KiPBp4fI2JKNcHxkfcdpMdQZeSeNjyMJdyXx_0yzJPDJCWTV0GAl9VMfGfoZgf-4Me73tavpS1CqQd_15uSXy8EudxrdB_3ltV3EPt_kYmpShieYGT3SF7BeesxzQFB8FAgcm9mbh1cfEnPj1PU-huAe7kyNbWib-OWx_E8ZRD7C4BzLvo_QfxXZE2lZHk_lGj6cC5OV-WZTwIEJUf3wg1WKE1q7EKSHdqL_nsaoan9GEnhSSj-ErjGnqBIfWYKcJZTSBRXFEotsNu1Ip2XCU-FXHn5urqgu7C3VFnoJFJphL44gdEo4GhudPzEYLR4XFcClYWtmJrmTwsO7fI21rraeWD7FCwSqNnVPdgzYoQR-537aeotGky78f5D0di9XYQol_MyrdsmkHoj7d1dxjGX0-DN_PV7BSP0aDm97z8tnSg57bvzjkSl-TmlRdTxsX-olYL8CKfkTCulYamrGDh_gNPGCvYM",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://Sporify_testing",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://accounts.spotify.com/authorize?&client_id=d59e0362b46b494e9c753c7824457df5&response_type=code&redirect_uri=https%3A%2F%2FSporify_testing&scope=ugc-image-upload  user-read-playback-state user-modify-playback-state app-remote-control streaming playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public user-follow-modify user-follow-read user-read-playback-position user-top-read user-read-recently-played user-library-modify user-library-read user-read-email user-read-private ",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						},
+						{
+							"key": "client_id",
+							"value": "d59e0362b46b494e9c753c7824457df5"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https%3A%2F%2FSporify_testing"
+						},
+						{
+							"key": "scope",
+							"value": "ugc-image-upload  user-read-playback-state user-modify-playback-state app-remote-control streaming playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public user-follow-modify user-follow-read user-read-playback-position user-top-read user-read-recently-played user-library-modify user-library-read user-read-email user-read-private "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Album",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1/albums/3qFQ4XNQ15alZrAaj5oGJK",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"albums",
+						"3qFQ4XNQ15alZrAaj5oGJK"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1/playlists/37i9dQZF1E39l40iwxng4U",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"playlists",
+						"37i9dQZF1E39l40iwxng4U"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Change Playlist Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"API Playlist Actualizat\",\r\n    \"description\": \"Playlist for testing API\",\r\n    \"public\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v1/playlists/60G3qW2PPwIEV4WsExhkoH",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"playlists",
+						"60G3qW2PPwIEV4WsExhkoH"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Add Items to Playlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uris\": [\r\n        \"spotify:track:2BqDbaNNOMdxKc6jfJ8O0e\", \"spotify:track:5tz5QsHPkv69T1scq2utZZ\" \r\n    ],\r\n    \"position\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v1/playlists/60G3qW2PPwIEV4WsExhkoH/tracks",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"playlists",
+						"60G3qW2PPwIEV4WsExhkoH",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Remove Playlist Items",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tracks\": [\r\n        {\r\n            \"uri\": \"spotify:track:5tz5QsHPkv69T1scq2utZZ\"\r\n        }\r\n    ],\r\n    \"snapshot_id\": \"AAAADBVFQir0THMUOXIEISVZYJ7Q/PU3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v1/playlists/60G3qW2PPwIEV4WsExhkoH/tracks",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"playlists",
+						"60G3qW2PPwIEV4WsExhkoH",
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
