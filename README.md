@@ -26,7 +26,7 @@ Acest proiect demonstrează cum să testezi diferite metode API de la Spotify fo
 3. Configurează variabilele de mediu pentru tokenul de acces Spotify.
 
 ![Generate_code](images/Generate%20Code.JPG)
-![Generate_Token](images/Generate_Token.JPG)
+![Generate_Token](images/Generate%20Token.JPG)
 
 ## Teste API
 
@@ -34,7 +34,7 @@ Acest proiect demonstrează cum să testezi diferite metode API de la Spotify fo
 
 Această metodă recuperează informații despre un album specific.
 
-![GET Album](images/Get_Album_method.JPG)
+![GET Album](images/Get%20Album%20method.JPG)
 
 #### Teste efectuate:
 - Verifică dacă răspunsul are statusul 200.
@@ -45,13 +45,13 @@ Această metodă recuperează informații despre un album specific.
 - Verifică ca numele primei piese este corect
 - Verifică ca toate piesele conting numele corect al albumului
 
-![Teste GET Album](images/Get_Album_tests.JPG)
+![Teste GET Album](images/Get%20Album%20tests.JPG)
 
 ### GET Playlist
 
 Această metodă recuperează informații despre un playlist specific.
 
-![GET Playlist](images/Get_Playlist.JPG)
+![GET Playlist](images/Get%20Playlist.JPG)
 
 #### Teste efectuate:
 - Verifică dacă răspunsul are statusul 200.
@@ -62,13 +62,13 @@ Această metodă recuperează informații despre un playlist specific.
 - Verifică daca numele primei piese este "Immoralized"
 - Verifică daca toate piesele sunt disponibile pentru piata din Romania
 
-![Teste GET Playlist](images/Get_Playlist_test.JPG)
+![Teste GET Playlist](images/Get%20Playlist%20test.JPG)
 
 ### PUT Change Playlist Details
 
 Această metodă modifică detaliile unui playlist specific.
 
-![PUT Change Playlist Details](images/Change_Playlist_Details.JPG)  
+![PUT Change Playlist Details](images/Change%20Playlist%20Details.JPG)  
 
 #### Teste efectuate:
 - Verifică dacă răspunsul are statusul 200.
@@ -76,15 +76,15 @@ Această metodă modifică detaliile unui playlist specific.
 - Verifică dacă descrierea playlistului a fost actualizată corect.
 - Verifică dacă starea publică/privată a playlistului a fost actualizată corect.
 
-![Teste PUT Change Playlist Details](images/Change_Playlist_Details_Tests.JPG) 
+![Teste PUT Change Playlist Details](images/Change%20Playlist%20Details%20Tests.JPG) 
 
-![Verifica daca modificarile s-au facut si Bug la parametrul 'public'](images/Change_Playlist_Details_+BUG.JPG) 
+![Verifica daca modificarile s-au facut si Bug la parametrul 'public'](images/Change%20Playlist_Details%20+BUG.JPG) 
 
 ### POST Add Items to Playlist
 
 Această metodă adaugă piese într-un playlist specific.
 
-![POST Add Items to Playlist](images/Add_Items_to_Playlist.JPG)
+![POST Add Items to Playlist](images/Add%20Items%20to%20Playlist.JPG)
 
 #### Teste efectuate:
 - Verifică dacă răspunsul are statusul 201.
@@ -92,13 +92,13 @@ Această metodă adaugă piese într-un playlist specific.
 - Verifică dacă răspunsul conține câmpul `snapshot_id`.
 - Verifică dacă `snapshot_id` nu este gol.
 
-![Teste POST Add Items to Playlist](images/Add_items_to_Playlist_Test.JPG)
+![Teste POST Add Items to Playlist](images/Add%20items%20to%20Playlist%20Test.JPG)
 
 ### DELETE Remove Playlist Items
 
 Această metodă elimină piese dintr-un playlist specific.
 
-![DELETE Remove Playlist Items](images/Remove_Playlist_Items.JPG)
+![DELETE Remove Playlist Items](images/Remove%20Playlist%20Items.JPG)
 
 #### Teste efectuate:
 - Verifică dacă răspunsul are statusul 200.
@@ -106,7 +106,7 @@ Această metodă elimină piese dintr-un playlist specific.
 - Verifică dacă răspunsul conține câmpul `snapshot_id`.
 - Verifică dacă `snapshot_id` nu este gol.
 
-![Teste DELETE Remove Playlist Items](images/Remove_Playlist_Items_Tests.JPG)
+![Teste DELETE Remove Playlist Items](images/Remove%20Playlist%20Items%20Tests.JPG)
 
 ## Contribuții
 
