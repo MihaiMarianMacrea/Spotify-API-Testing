@@ -77,8 +77,7 @@
 						{
 							"key": "grant_type",
 							"value": "client_credentials",
-							"type": "text",
-							"disabled": true
+							"type": "text"
 						},
 						{
 							"key": "client_id",
@@ -97,7 +96,7 @@
 						},
 						{
 							"key": "code",
-							"value": "AQCy_dCEixBglmbOJ6dXLs4Zh12uCAaCqHimWu-il_Nb93o7deiPLRro2-aGNqedkjZfO6Wa_ScN-iOcAGOVsn_yjkkfWA02zASZV2KxW5NmcFaEMWQDPVTCaQ-3qybx5bRtStYTW4wjbzWU3N9wFMB4gF0-78aTaIa2YGfiYxDu4N8S-tB9TnAENu2FuXFgjcE-lA6X5BU8KiPBp4fI2JKNcHxkfcdpMdQZeSeNjyMJdyXx_0yzJPDJCWTV0GAl9VMfGfoZgf-4Me73tavpS1CqQd_15uSXy8EudxrdB_3ltV3EPt_kYmpShieYGT3SF7BeesxzQFB8FAgcm9mbh1cfEnPj1PU-huAe7kyNbWib-OWx_E8ZRD7C4BzLvo_QfxXZE2lZHk_lGj6cC5OV-WZTwIEJUf3wg1WKE1q7EKSHdqL_nsaoan9GEnhSSj-ErjGnqBIfWYKcJZTSBRXFEotsNu1Ip2XCU-FXHn5urqgu7C3VFnoJFJphL44gdEo4GhudPzEYLR4XFcClYWtmJrmTwsO7fI21rraeWD7FCwSqNnVPdgzYoQR-537aeotGky78f5D0di9XYQol_MyrdsmkHoj7d1dxjGX0-DN_PV7BSP0aDm97z8tnSg57bvzjkSl-TmlRdTxsX-olYL8CKfkTCulYamrGDh_gNPGCvYM",
+							"value": "AQDptXwQiS3kU2uA_FNzOmWIYULuiWoSFogLZpY3UzRb79YtSJYc38-RA_sLeD-WRLqmmF6A6DR6UqResMoQwFSb7gnIrLLBrmyokO7EdfjgGdX2Sf8EWai3_kvI2gQhHiDIPLAb8F3CttVCMJ7NaU53O7swPd3oD28Bi_f4dyoYh4Cc7EV2IQCwuMyfoH2YL8Y6PBiF-vuh7DifP9FSyLQgzxJ31TE0R2gv1fhPQNoXHPWHe-Ul8BefM-F8Grbs1s4r4blgUai2w5NVao5YsZWLHa_0oG-I39hoODyxypu6vVav82l8uS15RUfjV8301BuOIkMPd9AokS4BwG9mCuSooqhQmqtTUcjOv9XSNZmA2IgNgMtC5UBnaUK4KdDKFKBOvwyDA8_GtN0TBDOQJeTByMkzTZ1KozlLTE3n2QfHPApL1_a36wP5UbWMhTs7BX72lNNhIHxqeRKenk9PYbaLMLVoOOEk_ZmTtKJqa1nx1OqN2W192fyKQ7Oc3AM79vDyCcbj2icKyriwDWgHzEFvep720mZqWi0xYTLG0p2Qekpoq9fwaNMXc5QnyNWcZB_2Iv_XLpd2u-jYbcvH52MPmB2QsbS6MffUQVnOCfIpvmrMqWX2agjhxtxU4TbGH9fL83SEEdYRXnAcFYnm6D_WU18Acms60vmo9fkHwnA",
 							"type": "text"
 						},
 						{
@@ -167,6 +166,65 @@
 		},
 		{
 			"name": "GET Album",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Validam statul codul 200 care indica OK\r",
+							"pm.test(\"Verify that the request returns status code 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Verificam ca timpul de respuns este mai mic de 400ms\r",
+							"pm.test(\"Verify that the request runs in less than 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});\r",
+							"\r",
+							"//Verificam ca raspunsul metodei este in format JSON\r",
+							"pm.test(\"Răspunsul este în format JSON\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"//Verificam faptul ca  album_type are valoare album\r",
+							"pm.test(\"Verify album details contains 'album'\", function () {\r",
+							"    //pm.response.json().album_type == \"album\"; //prima optiune de testare\r",
+							"   //pm.expect(pm.response.json().album_type).to.equal(\"album\");  //a doua optiune de testare\r",
+							"   //pm.expect(pm.response.json()[\"album_type\"]) == \"album\";  //a treia varianta de testare \r",
+							"   pm.expect(pm.response.json()[\"album_type\"]).to.eql(\"album\") // a patra optiune de testare\r",
+							"   // var jsonData = pm.response.json(); //a cincea optiune de testare\r",
+							"   // pm.expect(jsonData).to.have.property('album_type', 'album');\r",
+							"});\r",
+							"\r",
+							"//Verificam ca numele artistului este Disturbed\r",
+							"pm.test(\"Verify that the artist name is Disturbed\", function(){\r",
+							"    pm.expect(pm.response.json()[\"artists\"][0][\"name\"]) == \"Disturbed\";\r",
+							"});\r",
+							"\r",
+							"//Verificam ca numele primei piese este corect\r",
+							"pm.test(\"Verify that the first name track on the album is The Eye of the Storm\", function(){\r",
+							"    pm.expect(pm.response.json()[\"tracks\"][\"items\"][1][\"artists\"][0][\"name\"]) == \"The Eye of the Storm\";\r",
+							"});\r",
+							"\r",
+							"//Verificam ca toate piesele conting numele corect al albumului\r",
+							"pm.test(\"Verify that all the tracks have corect album name\", function(){\r",
+							"    album_ok = true;\r",
+							"    for (var i = 0; i<= pm.response.json()[\"tracks\"][\"items\"].lenght; i++){\r",
+							"        if ( pm.response.json()[\"tracks\"][\"items\"][\"artists\"][0][\"name\"] != \"Disturbed\" ){\r",
+							"            album_ok = false;\r",
+							"        }\r",
+							"    }\r",
+							"    pm.expect(pm.response.json()[\"artists\"][0][\"name\"]) == \"Disturbed\";\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -180,6 +238,15 @@
 				},
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{host}}/v1/albums/3qFQ4XNQ15alZrAaj5oGJK",
 					"host": [
@@ -196,6 +263,65 @@
 		},
 		{
 			"name": "GET Playlist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Validam statul codul 200 care indica OK\r",
+							"pm.test(\"Verify that the request returns status code 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Verificam ca timpul de respuns este mai mic de 600ms\r",
+							"pm.test(\"Verify that the request runs in less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"\r",
+							"//Verificam ca raspunsul metodei este in format JSON\r",
+							"pm.test(\"Răspunsul este în format JSON\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"//Verificam ca numele playlistului este \"API Playlist Actualizat\"\r",
+							"pm.test(\"Verify that the playlist name is API Playlist Actualizat\", function () {\r",
+							"    pm.expect(pm.response.json()[\"name\"]).to.eql(\"API Playlist Actualizat\");\r",
+							"});\r",
+							"\r",
+							"//Verificam daca playlistul este public\r",
+							"pm.test(\"Verify that the playlist is public\", function(){\r",
+							"    pm.expect(pm.response.json().public).to.be.true;\r",
+							"});\r",
+							"\r",
+							"//Verificam daca numele primei piese este \"Immoralized\"\r",
+							"pm.test(\"Verify the name of the first track\", function(){\r",
+							"    pm.response.json()[\"tracks\"][\"items\"][0][\"track\"][\"album\"][\"name\"] == \"Immoralized\";\r",
+							"});\r",
+							"\r",
+							"//Verificam daca toate piesele sunt disponibile pentru piata din Romania\r",
+							"pm.test(\"Verify that all the tracks are available in the Romanian market\", function (){\r",
+							"    for(var i = 0; i < pm.response.json()[\"tracks\"][\"items\"].length; i++ )\r",
+							"    {\r",
+							"        var track_are_available_on_romanian_market = false;\r",
+							"        for(var j = 0; j < pm.response.json()[\"tracks\"][\"items\"][i][\"track\"][\"available_markets\"].length; j++ )\r",
+							"        {\r",
+							"            if (pm.response.json()[\"tracks\"][\"items\"][i][\"track\"][\"available_markets\"][j] === \"RO\")\r",
+							"            {\r",
+							"                track_are_available_on_romanian_market = true;\r",
+							"                break;\r",
+							"            }\r",
+							"        }\r",
+							"        pm.expect(track_are_available_on_romanian_market).to.be.true;\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -210,14 +336,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/v1/playlists/37i9dQZF1E39l40iwxng4U",
+					"raw": "{{host}}/v1/playlists/60G3qW2PPwIEV4WsExhkoH",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"v1",
 						"playlists",
-						"37i9dQZF1E39l40iwxng4U"
+						"60G3qW2PPwIEV4WsExhkoH"
 					]
 				}
 			},
@@ -225,6 +351,46 @@
 		},
 		{
 			"name": "PUT Change Playlist Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Validam statul codul 200 care indica OK\r",
+							"pm.test(\"Verify that the request returns status code 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Verificam ca timpul de respuns este mai mic de 600ms\r",
+							"pm.test(\"Verify that the request runs in less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"\r",
+							"//Verificam ca raspunsul metodei este in format JSON\r",
+							"pm.test(\"Răspunsul este în format JSON\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"//Verificam faptul ca playlistul se numeste API Playlist Actualizat\r",
+							"pm.test(\"Verify that the playlist name is API Playlist Actualizat\", function () {\r",
+							"      pm.expect(pm.response.json()[\"name\"]).to.eql(\"API Playlist Actualizat\") \r",
+							"});\r",
+							"\r",
+							"//Verificam daca playlistul este public\r",
+							"pm.test(\"Verify that the playlist is public\", function(){\r",
+							"    pm.expect(pm.response.json().public).to.be.true;\r",
+							"});\r",
+							"\r",
+							"//Verificam daca numele primei melodi este Immoralized\r",
+							"pm.test(\"Verify the name of the first track\", function(){\r",
+							"    pm.response.json()[\"tracks\"][\"items\"][0][\"track\"][\"album\"][\"name\"] == \"Immoralized\";\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -240,7 +406,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"API Playlist Actualizat\",\r\n    \"description\": \"Playlist for testing API\",\r\n    \"public\": false\r\n}",
+					"raw": "{\r\n    \"name\": \"API Playlist Actualizat\",\r\n    \"description\": \"Playlist for testing API 2\",\r\n    \"public\": false\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -278,7 +444,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"uris\": [\r\n        \"spotify:track:2BqDbaNNOMdxKc6jfJ8O0e\", \"spotify:track:5tz5QsHPkv69T1scq2utZZ\" \r\n    ],\r\n    \"position\": 0\r\n}",
+					"raw": "{\r\n    \"uris\": [\r\n        \"spotify:track:1301WleyT98MSxVHPZCA6M\" \r\n    ],\r\n    \"position\": 4\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
