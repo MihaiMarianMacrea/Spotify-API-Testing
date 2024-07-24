@@ -108,7 +108,6 @@ Această metodă elimină piese dintr-un playlist specific.
 
 ![Raportrul_de_executie_in_Postman](images/Raport%20de%20executie%20al%20testelor.JPG)
 
-
 ### Raportul de execuție generat din Collection Runner
 ##[V2](images/Raport%20de%20executie%20al%20testelor%20v2.JPG)
 
