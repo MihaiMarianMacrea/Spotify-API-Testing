@@ -107,7 +107,7 @@ Această metodă elimină piese dintr-un playlist specific.
 - Verifică dacă `snapshot_id` nu este gol.
 
 
-![Raportrul de executie in Postman](images/Raport%20de%20executie%20al%20testelor.JPG)
+![Raportrul_de_executie_in_Postman](images/Raport%20de%20executie%20al%20testelor.JPG)
 
 
 ### Raportul de execuție generat din Collection Runner
