@@ -107,11 +107,11 @@ Această metodă elimină piese dintr-un playlist specific.
 - Verifică dacă `snapshot_id` nu este gol.
 
 
-![Raportrul de executie in Postman!](images/Raport%20de%20executie%20al%20testelor.JPG)
+![Raportrul de executie in Postman](images/Raport%20de%20executie%20al%20testelor.JPG)
 
-##[V2](images/Raport%20de%20executie%20al%20testelor%20v2.JPG)
 
 ### Raportul de execuție generat din Collection Runner
+##[V2](images/Raport%20de%20executie%20al%20testelor%20v2.JPG)
 
 
 ![Teste DELETE Remove Playlist Items](images/Remove%20Playlist%20Items%20Tests.JPG)
