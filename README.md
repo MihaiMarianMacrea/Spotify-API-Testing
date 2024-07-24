@@ -108,13 +108,11 @@ Această metodă elimină piese dintr-un playlist specific.
 
 ![Teste DELETE Remove Playlist Items](images/Remove%20Playlist%20Items%20Tests.JPG)
 
-![Raportrul_de_executie_in_Postman]
+![Raportrul_de_executie_in_Postman](images/Raport%20de%20executie%20al%20testelor.JPG)
 
 ### Raportul de execuție generat din Collection Runner
 
-#[V1](images/Raport%20de%20executie%20al%20testelor.JPG)
-
-#[V2](images/Raport%20de%20executie%20al%20testelor%20v2.JPG)
+![](images/Raport%20de%20executie%20al%20testelor%20v2.JPG)
 
 
 
