@@ -120,11 +120,11 @@ Această metodă elimină piese dintr-un playlist specific.
 
 ## Tipul de testare folosit
 
- o GETAlbum : Testare functionala si de performanta
- o GETPlaylist: Testara functionala si de performanta
- o PUTChangePlaylist Details: Testara functionala si de performanta
- o POST AddItems to Playlist : Testare functionala
- o DELETE Removed Playlist Items : Testare functionala
+ - GETAlbum : Testare functionala si de performanta
+ - GETPlaylist: Testara functionala si de performanta
+ - PUTChangePlaylist Details: Testara functionala si de performanta
+ - POST AddItems to Playlist : Testare functionala
+ - DELETE Removed Playlist Items : Testare functionala
 
 ## Concluzii
 
