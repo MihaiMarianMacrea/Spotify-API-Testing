@@ -128,7 +128,7 @@ Această metodă elimină piese dintr-un playlist specific.
 
 ## Concluzii
 
- Numărdetesteefectuate: 24
+ Număr de teste efectuate: 24
  - Procentajul acoperit al requesturilor: 100%
  - Procentajul de teste passed: 100%
  - Bug-uri identificate: 1 bug minor
