@@ -118,11 +118,20 @@ Această metodă elimină piese dintr-un playlist specific.
 
 
 
-## Contribuții
+## Tipul de testare folosit
 
-Contribuțiile sunt binevenite! Te rog să deschizi un pull request sau să raportezi probleme în secțiunea de issues.
+ o GETAlbum : Testare functionala si de performanta
+ o GETPlaylist: Testara functionala si de performanta
+ o PUTChangePlaylist Details: Testara functionala si de performanta
+ o POST AddItems to Playlist : Testare functionala
+ o DELETE Removed Playlist Items : Testare functionala
 
-## Licență
+## Concluzii
 
-Acest proiect este licențiat sub licența ITFACTORY.
+ Numărdetesteefectuate: 24
+ - Procentajul acoperit al requesturilor: 100%
+ - Procentajul de teste passed: 100%
+ - Bug-uri identificate: 1 bug minor
+ - Impactul bug-ului: Scăzut, nu afectează funcționalitățile critice
+ - Risc de lansare: Aplicatia nu prezintă riscuri majore și poate fi lansată fără probleme
 
